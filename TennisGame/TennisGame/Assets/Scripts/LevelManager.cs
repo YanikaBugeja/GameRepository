@@ -27,4 +27,5 @@ public class LevelManager : MonoBehaviour
     {
         UnityEditor.EditorApplication.isPlaying = false;
     }
+
 }
