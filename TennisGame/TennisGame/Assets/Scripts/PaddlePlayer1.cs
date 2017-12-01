@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PaddlePlayer1 : MonoBehaviour {
     float paddlePositionInUnits;
     // Use this for initialization
     void Start () {
          paddlePositionInUnits = 0.00f;
+         
     }
 	
 	// Update is called once per frame
@@ -37,4 +39,5 @@ public class PaddlePlayer1 : MonoBehaviour {
         this.transform.position = newPaddlePosition;
 
     }
+    
 }
