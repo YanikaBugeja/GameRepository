@@ -6,53 +6,41 @@ using UnityEngine.SceneManagement;
 
 public class Player2Score : MonoBehaviour
 {
-
     public Text ScorePlayer2;
-
     public static int Score2;
+    public int MaxScore1;
+    public string level;
+    public int ScoreAddition;
+    public string Nextlevel;
+
     LevelManager levelManager = new LevelManager();
+    
     // Use this for initialization
     void Start()
     {
-        
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
         ScorePlayer2.text = Score2.ToString();
+        if (Score2 == MaxScore1)
+        {
+            SceneManager.LoadScene(Nextlevel);
+        }
     }
-
     public void OnCollisionEnter2D(Collision2D collision)
     {
         print("Collision");
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Score2 = Score2 + 2;
-        
-        if (Score2 >= 0 && Score2 < 6)
-        {
-            SceneManager.LoadScene("Level_01");
-        }
-        if (Score2 >= 6 && Score2 < 8)
-        {
+        Score2 = Score2 + ScoreAddition;
 
-            SceneManager.LoadScene("Level_02");
-        }
+        SceneManager.LoadScene(level);
 
-        if (Score2 >= 8 && Score2 < 10)
-        {
-            SceneManager.LoadScene("Level_03");
-        }
-
-        if (Score2 >= 10 && Score2 < 12)
-        {
-            SceneManager.LoadScene("EndScene");
-        }
     }
+
 }
 
 
