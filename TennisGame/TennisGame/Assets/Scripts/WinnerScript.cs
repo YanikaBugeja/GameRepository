@@ -5,21 +5,23 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class WinnerScript : MonoBehaviour {
 
-	// Use this for initialization
-	
+    // Use this for initialization
+
 
     public Text Winner;
-    public Text ScorePlayer1;
-    public static int Score1;
-    public Text ScorePlayer2;
-    public static int Score2;
+    public Text Score1;
+    public Text Score2;
+    int StoreScore1;
+    int StoreScore2;
+    
 
     // Use this for initialization
     void Start()
     {
-       
-        Score1 = Player1Score.Score1;
-        Score2 = Player2Score.Score2;
+        StoreScore1 = Player1Scores.StoreScore1;
+        StoreScore2 = Player2Scores.StoreScore2;
+        Score1.text = StoreScore1.ToString();
+        Score2.text = StoreScore2.ToString();
         WinnerDisplay();
 
     }
@@ -27,20 +29,22 @@ public class WinnerScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public void WinnerDisplay()
     {
-        if (Score1 > Score2)
+        if (StoreScore1 > StoreScore2)
         {
             Winner.text = "Player 1 : You Won !! ";
         }
-        else if (Score1 < Score2)
+        else if (StoreScore1 < StoreScore2)
         {
             Winner.text = "Player 2 : You Won !! ";
 
-
+        } else if (StoreScore1 == StoreScore2)
+        {
+            Winner.text = "Player 1 AND Player 2 Won ";
         }
     }
 }

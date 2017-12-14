@@ -96,8 +96,8 @@
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\PaddlePlayer1.cs" />
     <Compile Include="Assets\Scripts\PaddlePlayer2.cs" />
-    <Compile Include="Assets\Scripts\Player1Score.cs" />
-    <Compile Include="Assets\Scripts\Player2Score.cs" />
+    <Compile Include="Assets\Scripts\Player1Scores.cs" />
+    <Compile Include="Assets\Scripts\Player2Scores.cs" />
     <Compile Include="Assets\Scripts\TennisBall.cs" />
     <Compile Include="Assets\Scripts\WinnerScript.cs" />
     <Compile Include="Assets\Scripts\mObstacle1.cs" />
